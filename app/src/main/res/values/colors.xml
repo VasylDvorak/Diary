@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorHistoryCard">#ABEAE3</color>
+    <color name="color_favorite_card">#FAD4DC</color>
+    <color name="color_error">#bf1e19</color>
+    <color name="color_text_main">#66000014</color>
+    <color name="color_delete_text_icon">#66000014</color>
+    <color name="color_text_header">#313131</color>
+    <color name="color_black">#313131</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_gray">#66000000</color>
+    <color name="search_icon_color">#9C27B0</color>
+    <color name="card_color">#CEE8F8</color>
+    <color name="color_white_transparent">#80FFFFFF</color>
+    <color name="animated_icon_color">#3AF506</color>
+    <color name="click_text">#C2D0DC</color>
+
+    <!-- bottom nav menu -->
+    <color name="item_icon_tint">#000000</color>
+    <color name="item_text">#556268</color>
+    <color name="bnv_default">#059EE4</color>
+    <color name="widget_gradient_end">#044fab</color>
+    <color name="widget_gradient_start">#9cefee</color>
+
+    <color name="blue_dark">#276EF1</color>
+    <color name="blue_medium">#5B91F4</color>
+    <color name="blue_light">#A0BFF9</color>
+
+    <!-- pastel colors -->
+    <color name="pastel_yellow">#FBE7C6</color>
+    <color name="pastel_mint">#B4F8C8</color>
+    <color name="pastel_tiffany_blue">#A0E7E5</color>
+    <color name="pastel_hot_pink">#FFAEBC</color>
+
+    <!-- pastel dark colors -->
+    <color name="pastel_yellow_dark">#fdd79b</color>
+    <color name="pastel_mint_dark">#94f5b2</color>
+    <color name="pastel_tiffany_blue_dark">#62d6d2</color>
+    <color name="pastel_hot_pink_dark">#f67a90</color>
+
+    <!-- purple pastel colors -->
+    <color name="purple_background">#efeaf9</color>
+    <color name="purple_light">#d6cbef</color>
+    <color name="purple_middle">#A084DC</color>
+    <color name="purple_dark">#645CBB</color>
+
+    <color name="example_back">#e0f7fd</color>
+    <color name="example">#77DDF9</color>
+    <color name="example_middle">#00c3f9</color>
+    <color name="example_dark">#00aaec</color>
+
+</resources>

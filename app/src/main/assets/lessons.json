@@ -1,0 +1,144 @@
+[
+  {
+    "dataCalendarEndTime": {
+      "day": 20,
+      "hour": 14,
+      "minute": 30,
+      "month": 2,
+      "year": 2024
+    },
+    "dataCalendarStartTime": {
+      "day": 20,
+      "hour": 13,
+      "minute": 30,
+      "month": 2,
+      "year": 2024
+    },
+    "description": "Зкзамен по литературе",
+    "elapsedTime": {
+      "day": 0,
+      "hour": 0,
+      "minute": 0,
+      "month": 0,
+      "year": 0
+    },
+    "icons": [],
+    "id": 1,
+    "subject": "Литература",
+    "typeofLesson": "Экзамен"
+  },
+  {
+    "dataCalendarEndTime": {
+      "day": 20,
+      "hour": 14,
+      "minute": 30,
+      "month": 3,
+      "year": 2024
+    },
+    "dataCalendarStartTime": {
+      "day": 20,
+      "hour": 13,
+      "minute": 30,
+      "month": 3,
+      "year": 2024
+    },
+    "description": "Чистописание",
+    "elapsedTime": {
+      "day": 0,
+      "hour": 0,
+      "minute": 0,
+      "month": 0,
+      "year": 0
+    },
+    "icons": [],
+    "id": 2,
+    "subject": "Русский язык",
+    "typeofLesson": "Урок"
+  },
+  {
+    "dataCalendarEndTime": {
+      "day": 20,
+      "hour": 14,
+      "minute": 30,
+      "month": 4,
+      "year": 2024
+    },
+    "dataCalendarStartTime": {
+      "day": 20,
+      "hour": 13,
+      "minute": 30,
+      "month": 4,
+      "year": 2024
+    },
+    "description": "Решить задачу",
+    "elapsedTime": {
+      "day": 0,
+      "hour": 0,
+      "minute": 0,
+      "month": 0,
+      "year": 0
+    },
+    "icons": [],
+    "id": 3,
+    "subject": "Математика",
+    "typeofLesson": "Домашнее задание"
+  },
+  {
+    "dataCalendarEndTime": {
+      "day": 20,
+      "hour": 14,
+      "minute": 30,
+      "month": 11,
+      "year": 2023
+    },
+    "dataCalendarStartTime": {
+      "day": 20,
+      "hour": 13,
+      "minute": 30,
+      "month": 11,
+      "year": 2023
+    },
+    "description": "Зкзамен по матемаитке",
+    "elapsedTime": {
+      "day": 0,
+      "hour": 0,
+      "minute": 0,
+      "month": 0,
+      "year": 0
+    },
+    "icons": [],
+    "id": 1,
+    "subject": "Математика",
+    "typeofLesson": "Экзамен"
+  },
+  {
+    "dataCalendarEndTime": {
+      "day": 28,
+      "hour": 14,
+      "minute": 30,
+      "month": 1,
+      "year": 2024
+    },
+    "dataCalendarStartTime": {
+      "day": 28,
+      "hour": 13,
+      "minute": 30,
+      "month": 1,
+      "year": 2024
+    },
+    "description": "Учим стишок",
+    "elapsedTime": {
+      "day": 0,
+      "hour": 0,
+      "minute": 0,
+      "month": 0,
+      "year": 0
+    },
+    "icons": [],
+    "id": 1,
+    "subject": "Английский язык",
+    "typeofLesson": "Дополнительное занятие"
+  }
+]
+
+
