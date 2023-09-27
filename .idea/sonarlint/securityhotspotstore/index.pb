@@ -41,7 +41,5 @@ m
 Papp/src/main/java/com/diary/view/base_for_dictionary/BaseFragmentSettingsMenu.kt,5\1\5154f8f06355dab61f693dfe292865238b9adc57
 o
 ?app/src/main/java/com/diary/view/main_fragment/MainViewModel.kt,c\e\ce8ac232f5ff9fb85cf52e4864dba4f9633c6002
-~
-Napp/src/main/java/com/diary/view/main_fragment/HomeWorksMainFragmentAdapter.kt,b\2\b23269b3d9d201f5b1043ac6e22e196a7794dc38
 d
 4app/src/main/java/com/diary/model/data/AssetsRepo.kt,1\1\11c2dd07666ed4734d636a5fa7794a6f5af94c23

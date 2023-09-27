@@ -6,9 +6,9 @@ import com.diary.model.lessons_home_works.CommonDataModel
 import com.diary.model.lessons_home_works.Lesson
 import com.diary.model.repository.Repository
 import com.google.gson.Gson
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import java.time.Duration
 import java.util.Calendar
 
 class MainInteractor(
@@ -16,10 +16,15 @@ class MainInteractor(
 ) : Interactor {
 
     override suspend fun getAllLessonsOrHomeWorksOrExaminationList(): List<Lesson> {
-        val output =repositoryLocal.getAllLessonsOrHomeWorksOrExaminationList()
-          println("repositoryLocal.getAllLessonsOrHomeWorksOrExaminationList()="+Gson().toJson(output))
+        val output = repositoryLocal.getAllLessonsOrHomeWorksOrExaminationList()
+        println(
+            "repositoryLocal.getAllLessonsOrHomeWorksOrExaminationList()=" + Gson().toJson(
+                output
+            )
+        )
         return repositoryLocal.getAllLessonsOrHomeWorksOrExaminationList()
     }
+
 
     override suspend fun getHomeWorks(allTasks: List<Lesson>): List<HomeWork> {
         var homeWorks = allTasks.filter { it.typeofLesson == "Домашнее задание" }
@@ -30,21 +35,23 @@ class MainInteractor(
                 task = it.description,
                 icons = it.icons,
                 dataCalendarTime = it.dataCalendarStartTime,
-                dataCalendarTimePass = CalendarTime(day = checkDays(it))
+                dataCalendarTimePass = CalendarTime(day = checkTimeDifference(it)[0])
             )
         }
     }
 
+
     override suspend fun getExaminations(allTasks: List<Lesson>): List<Lesson> {
-val examinations = allTasks.filter { (it.typeofLesson == "Экзамен") && (checkDateTime(it)) }
+        val examinations = allTasks.filter { (it.typeofLesson == "Экзамен") && (checkDateTime(it)) }
 
         examinations.forEach {
-            var daysDifference = checkDays(it)
-            var hoursDifference = checkHours(it, daysDifference)
-            var minutesDifference = checkMinutes(it, hoursDifference)
-            it.elapsedTime=CalendarTime(day=daysDifference,
-                hour = hoursDifference,
-                minute = minutesDifference)
+            var timeDifference = checkTimeDifference(it)
+
+            it.elapsedTime = CalendarTime(
+                day = timeDifference[0],
+                hour = timeDifference[1],
+                minute = timeDifference[2]
+            )
         }
 
         return examinations
@@ -54,9 +61,10 @@ val examinations = allTasks.filter { (it.typeofLesson == "Экзамен") && (c
         return allTasks.filter { it.typeofLesson != "Домашнее задание" }
     }
 
-    override suspend fun getLessonsForLessonsFragment(): Flow<List<Lesson>>{
-       return MutableStateFlow(getLessons(repositoryLocal.getAllLessonsOrHomeWorksOrExaminationList()))
+    override suspend fun getLessonsForLessonsFragment(): Flow<List<Lesson>> {
+        return MutableStateFlow(getLessons(repositoryLocal.getAllLessonsOrHomeWorksOrExaminationList()))
     }
+
 
     override suspend fun getCommonData(): Flow<CommonDataModel> {
         var allTasks = getAllLessonsOrHomeWorksOrExaminationList()
@@ -82,7 +90,8 @@ val examinations = allTasks.filter { (it.typeofLesson == "Экзамен") && (c
         } else return item.dataCalendarEndTime.minute - calendar.get(Calendar.MINUTE) > 0
     }
 
-    suspend fun checkDays(item: Lesson): Int {
+
+    suspend fun checkTimeDifference(item: Lesson): List<Int> {
         val calendar = Calendar.getInstance()
         val timeFromItem = Calendar.getInstance()
         timeFromItem.set(
@@ -92,32 +101,13 @@ val examinations = allTasks.filter { (it.typeofLesson == "Экзамен") && (c
             item.dataCalendarEndTime.hour,
             item.dataCalendarEndTime.minute
         )
-        if (item.dataCalendarEndTime.year - calendar.get(Calendar.YEAR) > 0) {
-            val yearsDays = (item.dataCalendarEndTime.year - calendar.get(Calendar.YEAR)) * 365
-            val daysForItems =  timeFromItem.get(Calendar.DAY_OF_YEAR)
-            val daysForCurrentDate = 365 - calendar.get(Calendar.DAY_OF_YEAR)
-            return yearsDays + daysForItems + daysForCurrentDate
-        } else {
-            return timeFromItem.get(Calendar.DAY_OF_YEAR) - calendar.get(Calendar.DAY_OF_YEAR)
-        }
-    }
 
-    suspend fun checkHours(item: Lesson, daysDifference: Int): Int{
-        val calendar = Calendar.getInstance()
-        if(daysDifference>0){
-            return item.dataCalendarEndTime.hour
-        }else{
-            return item.dataCalendarEndTime.hour - calendar.get(Calendar.HOUR_OF_DAY)
-        }
-    }
+        val days = Duration.between(calendar.toInstant(), timeFromItem.toInstant()).toDays()
+        val hours =
+            Duration.between(calendar.toInstant(), timeFromItem.toInstant()).toHours() - days * 24
+        val minute = Duration.between(calendar.toInstant(), timeFromItem.toInstant())
+            .toMinutes() - Duration.between(calendar.toInstant(), timeFromItem.toInstant()).toHours() * 60
 
-    suspend fun checkMinutes(item: Lesson, hoursDifference: Int): Int{
-        val calendar = Calendar.getInstance()
-        if(hoursDifference>0){
-             return item.dataCalendarEndTime.minute
-        }else{
-            return item.dataCalendarEndTime.minute - calendar.get(Calendar.MINUTE)
-        }
+        return listOf(days.toInt(), hours.toInt(), minute.toInt())
     }
 }
-

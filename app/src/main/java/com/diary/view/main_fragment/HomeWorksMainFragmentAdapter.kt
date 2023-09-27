@@ -37,7 +37,8 @@ class HomeWorksMainFragmentAdapter :
                 itemView.apply {
                     binding.apply {
                         lesson.text = data.subject
-                        timeLeft.text = data.dataCalendarTimePass.day.toString()
+                        timeLeft.text ="Сдать ДЗ через " +
+                                data.dataCalendarTimePass.day.toString()+" дней"
                         task.text = data.task
                     }
                 }

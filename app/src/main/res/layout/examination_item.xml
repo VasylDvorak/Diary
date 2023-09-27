@@ -20,6 +20,7 @@
                 android:id="@+id/subject_examination"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:text="Экзамен по..."
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"

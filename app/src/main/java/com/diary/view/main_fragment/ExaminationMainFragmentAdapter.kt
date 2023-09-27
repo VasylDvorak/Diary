@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.diary.databinding.ExaminationItemBinding
-import com.diary.databinding.HomeWorkItemBinding
 import com.diary.model.lessons_home_works.Lesson
 
 class ExaminationMainFragmentAdapter :
@@ -19,12 +18,11 @@ class ExaminationMainFragmentAdapter :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExaminationItemViewHolder {
         val binding =
             ExaminationItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-
         return ExaminationItemViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ExaminationItemViewHolder, position: Int) {
-        holder.bind(data.get(position))
+        holder.bind(data[position])
     }
 
     override fun getItemCount(): Int {

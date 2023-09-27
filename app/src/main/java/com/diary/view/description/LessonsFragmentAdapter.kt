@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.diary.R
 import com.diary.databinding.LessonItemBinding
 import com.diary.model.lessons_home_works.Lesson
-import com.diary.view.main_fragment.LessonsMainFragmentAdapter
 
 class LessonsFragmentAdapter(
     private var onListItemClickListener: (Lesson) -> Unit,
@@ -46,6 +45,14 @@ class LessonsFragmentAdapter(
                                 data.dataCalendarStartTime?.minute.toString()+
                                 " - "+data.dataCalendarEndTime?.hour.toString()+":"+
                                 data.dataCalendarEndTime?.minute.toString()
+
+                        dateLesson.text =
+                            data.dataCalendarStartTime?.day.toString() + "." +
+                                    data.dataCalendarStartTime?.month.toString() + "."+
+                                    data.dataCalendarStartTime?.year.toString()
+
+                        typeLesson.text = data.typeofLesson
+
                         callSkype.setOnClickListener {
                             openInNewWindow(data)
                         }

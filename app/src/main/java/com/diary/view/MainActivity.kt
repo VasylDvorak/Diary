@@ -8,13 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.diary.R
 import com.diary.databinding.ActivityMainBinding
-import com.diary.model.home_work.CalendarTime
-import com.diary.model.lessons_home_works.Lesson
 import com.diary.navigation.IScreens
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
 import com.github.terrakok.cicerone.androidx.AppNavigator
-import com.google.gson.Gson
 import org.koin.android.ext.android.inject
 import org.koin.java.KoinJavaComponent
 
@@ -32,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.getDefaultNightMode())
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
-        toJson()
         binding?.bottomNavigationView?.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.to_home -> {
@@ -96,152 +92,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    fun toJson() {
-        val output = listOf(
-            Lesson(
-                id = 1,
-                subject = "Литература",
-                typeofLesson = "Экзамен",
-                description = "Зкзамен по литературе",
-                icons = listOf(),
-                dataCalendarStartTime = CalendarTime(
-                    year = 2024,
-                    month = 2,
-                    day = 20,
-                    hour = 13,
-                    minute = 30
-                ),
-                dataCalendarEndTime = CalendarTime(
-                    year = 2024,
-                    month = 2,
-                    day = 20,
-                    hour = 14,
-                    minute = 30
-                ),
-                elapsedTime = CalendarTime(
-                    year = 0,
-                    month = 0,
-                    day = 0,
-                    hour = 0,
-                    minute = 0
-                ),
-            ),
-            Lesson(
-                id = 2,
-                subject = "Русский язык",
-                typeofLesson = "Урок",
-                description = "Чистописание",
-                icons = listOf(),
-                dataCalendarStartTime = CalendarTime(
-                    year = 2024,
-                    month = 3,
-                    day = 20,
-                    hour = 13,
-                    minute = 30
-                ),
-                dataCalendarEndTime = CalendarTime(
-                    year = 2024,
-                    month = 3,
-                    day = 20,
-                    hour = 14,
-                    minute = 30
-                ),
-                elapsedTime = CalendarTime(
-                    year = 0,
-                    month = 0,
-                    day = 0,
-                    hour = 0,
-                    minute = 0
-                ),
-            ),
-            Lesson(
-                id = 3,
-                subject = "Физика",
-                typeofLesson = "Домашнее задание",
-                description = "Решить задачу",
-                icons = listOf(),
-                dataCalendarStartTime = CalendarTime(
-                    year = 2024,
-                    month = 4,
-                    day = 20,
-                    hour = 13,
-                    minute = 30
-                ),
-                dataCalendarEndTime = CalendarTime(
-                    year = 2024,
-                    month = 4,
-                    day = 20,
-                    hour = 14,
-                    minute = 30
-                ),
-                elapsedTime = CalendarTime(
-                    year = 0,
-                    month = 0,
-                    day = 0,
-                    hour = 0,
-                    minute = 0
-                )
-            ),
-            Lesson(
-                id = 1,
-                subject = "Математика",
-                typeofLesson = "Экзамен",
-                description = "Экзамен по математике",
-                icons = listOf(),
-                dataCalendarStartTime = CalendarTime(
-                    year = 2023,
-                    month = 11,
-                    day = 15,
-                    hour = 12,
-                    minute = 20
-                ),
-                dataCalendarEndTime = CalendarTime(
-                    year = 2023,
-                    month = 11,
-                    day = 15,
-                    hour = 13,
-                    minute = 20
-                ),
-                elapsedTime = CalendarTime(
-                    year = 0,
-                    month = 0,
-                    day = 0,
-                    hour = 0,
-                    minute = 0
-                )
-            ),
-            Lesson(
-                id = 3,
-                subject = "География",
-                typeofLesson = "Домашнее задание",
-                description = "Как отжать аляску у Пиндосов",
-                icons = listOf(),
-                dataCalendarStartTime = CalendarTime(
-                    year = 2024,
-                    month = 4,
-                    day = 20,
-                    hour = 13,
-                    minute = 30
-                ),
-                dataCalendarEndTime = CalendarTime(
-                    year = 2024,
-                    month = 4,
-                    day = 20,
-                    hour = 14,
-                    minute = 30
-                ),
-                elapsedTime = CalendarTime(
-                    year = 0,
-                    month = 0,
-                    day = 0,
-                    hour = 0,
-                    minute = 0
-                )
-            )
-        )
-        Gson().toJson(output)
     }
 
 }
