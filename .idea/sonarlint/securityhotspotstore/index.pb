@@ -11,8 +11,6 @@ u
 Eapp/src/main/java/com/diary/view/base_for_dictionary/BaseViewModel.kt,4\3\434409d0f867776d29878613ccdc0376632ca332
 t
 Dapp/src/main/java/com/diary/di/koin_modules/LessonsFragmentModule.kt,0\d\0dd901f0d68650d535cf5b7b17d253b0852b7ebc
-l
-<app/src/main/java/com/diary/domain/interactors/Interactor.kt,e\1\e130264ef7d4c569c3af8e75608f4e953ed5b529
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 ?
@@ -41,5 +39,15 @@ m
 Papp/src/main/java/com/diary/view/base_for_dictionary/BaseFragmentSettingsMenu.kt,5\1\5154f8f06355dab61f693dfe292865238b9adc57
 o
 ?app/src/main/java/com/diary/view/main_fragment/MainViewModel.kt,c\e\ce8ac232f5ff9fb85cf52e4864dba4f9633c6002
-d
-4app/src/main/java/com/diary/model/data/AssetsRepo.kt,1\1\11c2dd07666ed4734d636a5fa7794a6f5af94c23
+g
+7app/src/main/java/com/diary/model/home_work/HomeWork.kt,5\4\54e982e7cba9f73d29d6837249767c207417a365
+k
+;app/src/main/java/com/diary/model/home_work/CalendarTime.kt,9\9\99bcffa24e5d75b37b9995df10da580f76ffe83a
+p
+@app/src/main/java/com/diary/view/description/LessonsViewModel.kt,0\c\0c3bac699bc6f2eb4dae828bf75bc730e5b6f373
+j
+:app/src/main/java/com/diary/model/repository/Repository.kt,9\4\94a09c8d1d333eaf851e6332a1cb6339073aad70
+x
+Happ/src/main/java/com/diary/model/lessons_home_works/CoommonDataModel.kt,4\2\428262c4e833489f75107c8d7cf17f638d484313
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e

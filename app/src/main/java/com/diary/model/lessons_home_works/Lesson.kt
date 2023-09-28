@@ -8,10 +8,11 @@ import kotlinx.android.parcel.Parcelize
 class Lesson(
     var id: Int = 0,
     var subject: String = "",
-    var typeofLesson: String ="",
-    var description:String="",
-    var icons:List<String> = listOf(),
-    var dataCalendarStartTime: CalendarTime= CalendarTime(),
-    var dataCalendarEndTime: CalendarTime= CalendarTime(),
-    var elapsedTime:CalendarTime = CalendarTime()
+    var typeofLesson: String = "",
+    var description: String = "",
+    var icons: List<String> = listOf(),
+    var dataCalendarStartTime: CalendarTime = CalendarTime(),
+    var dataCalendarEndTime: CalendarTime = CalendarTime(),
+    var elapsedTime: CalendarTime = CalendarTime(),
+    var duration: Long = 0
 ) : Parcelable

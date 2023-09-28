@@ -1,6 +1,7 @@
 package com.diary.view.main_fragment
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.diary.databinding.ExaminationItemBinding
@@ -36,16 +37,19 @@ class ExaminationMainFragmentAdapter :
                 itemView.apply {
                     binding.apply {
                         subjectExamination.text = data.description
-                        timer.text = data.elapsedTime.day.toString() + ":" +
-                                data.elapsedTime.hour.toString() + ":" +
-                                data.elapsedTime.minute.toString()
+                        if (data.duration <= 0L) {
+                            toExamination.text = "Идёт экзамен"
+                            timer.visibility = View.GONE
+                        } else {
+                            timer.text = data.elapsedTime.day.toString() + ":" +
+                                    data.elapsedTime.hour.toString() + ":" +
+                                    data.elapsedTime.minute.toString()
+                        }
                     }
                 }
             }
         }
-
     }
-
 }
 
 
