@@ -166,6 +166,34 @@
     "id": 6,
     "subject": "Литература",
     "typeofLesson": "Домашнее задание"
+  },
+  {
+    "dataCalendarEndTime": {
+      "day": 25,
+      "hour": 14,
+      "minute": 30,
+      "month": 5,
+      "year": 2024
+    },
+    "dataCalendarStartTime": {
+      "day": 25,
+      "hour": 13,
+      "minute": 30,
+      "month": 5,
+      "year": 2024
+    },
+    "description": "Вторая мировая война",
+    "elapsedTime": {
+      "day": 0,
+      "hour": 0,
+      "minute": 0,
+      "month": 0,
+      "year": 0
+    },
+    "icons": [],
+    "id": 7,
+    "subject": "История",
+    "typeofLesson": "Урок"
   }
 ]
 

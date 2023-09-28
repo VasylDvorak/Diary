@@ -8,6 +8,8 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -28,15 +30,21 @@ import com.diary.utils.delegates.viewById
 import com.diary.view.AnimatorDictionary
 import com.github.terrakok.cicerone.Router
 import org.koin.java.KoinJavaComponent
+import smartdevelop.ir.eram.showcaseviewlib.GuideView
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType
+import smartdevelop.ir.eram.showcaseviewlib.config.Gravity
 
 const val countDownInterval: Long = 60 * 1000
-const val millisInFuture:Long = countDownInterval*1000
+const val millisInFuture: Long = countDownInterval * 1000
+
 abstract class BaseFragment<B : ViewBinding>(
     private val inflateBinding: (
         inflater: LayoutInflater, root: ViewGroup?, attachToRoot: Boolean
     ) -> B,
     private var lessonTableId: Int = 0
 ) : Fragment() {
+
+    lateinit var searchView: SearchView
     val lessonTable by viewById<RecyclerView>(lessonTableId)
     var lessons: List<Lesson> = listOf()
     lateinit protected var timer: CountDownTimer
@@ -71,7 +79,7 @@ abstract class BaseFragment<B : ViewBinding>(
         val manager = requireActivity().getSystemService(Context.SEARCH_SERVICE)
                 as SearchManager
         val searchItem = menu.findItem(R.id.search)
-        val searchView = searchItem?.actionView as SearchView
+        searchView = searchItem?.actionView as SearchView
 
         searchItem.apply {
 
@@ -84,6 +92,7 @@ abstract class BaseFragment<B : ViewBinding>(
 
                         query?.let { searchString ->
                             if (!lessons.isNullOrEmpty()) {
+
                                 val moveTo =
                                     lessons.find { lesson -> lesson.subject == searchString }
                                         ?: null
@@ -146,13 +155,35 @@ abstract class BaseFragment<B : ViewBinding>(
         val firstPosition = layoutManager.findFirstVisibleItemPosition()
         val lastPosition = layoutManager.findLastVisibleItemPosition()
         val visibleItems = lastPosition - firstPosition + 1
-
         if (firstPosition < scrollToPosition) {
             lessonTable.smoothScrollToPosition(scrollToPosition + (visibleItems / 2))
         } else {
             lessonTable.smoothScrollToPosition(scrollToPosition - (visibleItems / 2))
         }
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if (firstStart) {
+            Handler(Looper.getMainLooper()).postDelayed({
+                if (isAdded)// проверяем, не умер ли фрагент
+                    showTuturial()
+            }, 500)
+            firstStart = false
+        }
+    }
+
+    private fun showTuturial() {
+        GuideView.Builder(requireContext())
+            .setTitle(getString(R.string.serch_lesson))
+            .setContentText(getString(R.string.from_capital_letter))
+            .setTargetView(searchView)
+            .setGravity(Gravity.center)
+            .setDismissType(DismissType.anywhere) //optional - default dismissible by TargetView
+            .build()
+            .show()
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -163,4 +194,8 @@ abstract class BaseFragment<B : ViewBinding>(
         return AnimatorDictionary().setAnimator(transit, enter)
     }
 
+    companion object {
+        private var firstStart: Boolean = true
+
+    }
 }

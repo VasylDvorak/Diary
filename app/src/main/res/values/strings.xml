@@ -215,4 +215,6 @@
     <string name="now_exem">Идёт экзамен</string>
     <string name="pass_HW">"Сдать ДЗ через "</string>
     <string name="days">" дней"</string>
+    <string name="serch_lesson">Поиск урока</string>
+    <string name="from_capital_letter">Наберите название урока с большой буквы</string>
 </resources>

@@ -69,6 +69,7 @@ class LessonsFragment :
 
     fun renderData(lessons: List<Lesson>) {
         viewModel.setQuery(lessons)
+        super.lessons=lessons
         setDataToAdapter(lessons)
 
     }
