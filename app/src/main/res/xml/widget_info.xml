@@ -2,7 +2,7 @@
     android:initialLayout="@layout/lesson_item"
     android:minWidth="180dp"
     android:minHeight="110dp"
-    android:previewImage="@drawable/icon"
+    android:previewImage="@drawable/icon_book"
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="0">
 </appwidget-provider>

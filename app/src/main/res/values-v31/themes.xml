@@ -5,7 +5,7 @@
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_splashscreen_logo_animated</item>
         <item name="android:windowSplashScreenAnimationDuration">15000</item>
         <item name="android:windowSplashScreenIconBackgroundColor">@color/colorHistoryCard</item>
-        <item name="android:windowSplashScreenBrandingImage">@drawable/icon</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/icon_book</item>
     </style>
 
 

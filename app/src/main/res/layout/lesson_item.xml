@@ -43,7 +43,7 @@
                     android:id="@+id/icon"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/icon" />
+                    android:src="@drawable/book_lite" />
             </com.google.android.material.card.MaterialCardView>
 
             <androidx.appcompat.widget.AppCompatTextView

@@ -35,8 +35,6 @@ j
 :app/src/main/java/com/diary/di/koin_modules/DiConstants.kt,d\0\d051848b49c51705b1773cebf3a1460dc77787cd
 m
 =app/src/main/java/com/diary/di/koin_modules/CiceroneModule.kt,9\a\9a958952fed164c5752b8117fb73b85a8fe50588
-€
-Papp/src/main/java/com/diary/view/base_for_dictionary/BaseFragmentSettingsMenu.kt,5\1\5154f8f06355dab61f693dfe292865238b9adc57
 o
 ?app/src/main/java/com/diary/view/main_fragment/MainViewModel.kt,c\e\ce8ac232f5ff9fb85cf52e4864dba4f9633c6002
 g

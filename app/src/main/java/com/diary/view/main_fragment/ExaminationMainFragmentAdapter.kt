@@ -39,11 +39,16 @@ class ExaminationMainFragmentAdapter :
                         subjectExamination.text = data.description
                         if (data.duration <= 0L) {
                             toExamination.text = "Идёт экзамен"
-                            timer.visibility = View.GONE
+                            timerUnit.visibility = View.GONE
                         } else {
-                            timer.text = data.elapsedTime.day.toString() + ":" +
-                                    data.elapsedTime.hour.toString() + ":" +
-                                    data.elapsedTime.minute.toString()
+                            timerUnit.visibility = View.VISIBLE
+                            timer.text =
+                                (if (data.elapsedTime.day < 10) "0" else "").toString() +
+                                        data.elapsedTime.day.toString() + ":" +
+                                        (if (data.elapsedTime.hour < 10) "0" else "").toString() +
+                                        data.elapsedTime.hour.toString() + ":" +
+                                        (if (data.elapsedTime.minute < 10) "0" else "").toString() +
+                                        data.elapsedTime.minute.toString()
                         }
                     }
                 }

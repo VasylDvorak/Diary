@@ -38,7 +38,7 @@ class MainFragment : BaseFragmentSettingsMenu<FragmentMainBinding>(FragmentMainB
 
     private fun onItemClick(lesson: Lesson) {
         val skype = Intent("android.intent.action.VIEW")
-        skype.data = Uri.parse("skype:" + "number");
+        skype.data = Uri.parse("skype:" + "");
         context?.startActivity(skype)
     }
 
@@ -91,37 +91,16 @@ class MainFragment : BaseFragmentSettingsMenu<FragmentMainBinding>(FragmentMainB
 
     }
 
-
-    override fun responseEmpty() {
-
-    }
-
-
     fun renderData(commonDataModel: CommonDataModel) {
         viewModel.setQuery(commonDataModel)
         setDataToAdapter(commonDataModel)
 
     }
 
-
-    private fun showViewWorking() {
-    }
-
-
-    private fun showViewSuccess() {
-    }
-
-    fun showViewLoading() {
-    }
-
     fun setDataToAdapter(commonDataModel: CommonDataModel) {
         examinationTableAdapter?.setData(commonDataModel.examinations)
         lessonTableAdapter?.setData(commonDataModel.lessons)
         homeWorkTableAdapter?.setData(commonDataModel.homeWorkList)
-    }
-
-
-    private fun showViewError() {
     }
 
 
