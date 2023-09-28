@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.Menu
 import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -23,7 +22,6 @@ import com.diary.di.ConnectKoinModules
 import com.diary.model.lessons_home_works.Lesson
 import com.diary.utils.delegates.viewById
 import com.diary.view.base_for_dictionary.BaseFragmentSettingsMenu
-import com.diary.view.main_fragment.LessonsMainFragmentAdapter
 
 
 class LessonsFragment :
@@ -42,7 +40,7 @@ class LessonsFragment :
 
     private fun onItemClick(lesson: Lesson) {
         val skype = Intent("android.intent.action.VIEW")
-        skype.data = Uri.parse("skype:" + "number");
+        skype.data = Uri.parse("skype:" + "");
         context?.startActivity(skype)
     }
 
@@ -65,11 +63,12 @@ class LessonsFragment :
         this.viewModel.subscribe().observe(viewLifecycleOwner, observer)
 
         timer = object : CountDownTimer(
-            1000 * 1000*60,  60*1000
+            1000 * 1000 * 60, 60 * 1000
         ) {
             override fun onTick(millisUntilFinished: Long) {
                 this@LessonsFragment.viewModel.getData()
             }
+
             override fun onFinish() {
                 timer.start()
             }
@@ -81,11 +80,6 @@ class LessonsFragment :
         lessonTable.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         lessonTable.adapter = lessonTableAdapter
-    }
-
-
-    override fun responseEmpty() {
-
     }
 
 
@@ -128,9 +122,12 @@ class LessonsFragment :
                                 resources.getString(R.string.looking_for) + " " + query ?: "",
                                 Toast.LENGTH_LONG
                             ).show()
-                            showViewLoading()
                         } else {
-                            showViewError()
+                            Toast.makeText(
+                                context,
+                                "Ошибка",
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
                         return true
                     }
@@ -145,23 +142,8 @@ class LessonsFragment :
 
     }
 
-
-    private fun showViewWorking() {
-    }
-
-
-    private fun showViewSuccess() {
-    }
-
-    fun showViewLoading() {
-    }
-
     fun setDataToAdapter(lessons: List<Lesson>) {
         lessonTableAdapter?.setData(lessons)
-    }
-
-
-    private fun showViewError() {
     }
 
 

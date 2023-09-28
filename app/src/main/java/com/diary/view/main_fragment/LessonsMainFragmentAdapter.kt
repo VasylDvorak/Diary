@@ -46,6 +46,12 @@ class LessonsMainFragmentAdapter(
                                 " - " + data.dataCalendarEndTime?.hour.toString() + ":" +
                                 data.dataCalendarEndTime?.minute.toString()
 
+                        dateLesson.text =
+                            data.dataCalendarStartTime?.day.toString() + "." +
+                                    data.dataCalendarStartTime?.month.toString() + "." +
+                                    data.dataCalendarStartTime?.year.toString()
+                        typeLesson.text = data.typeofLesson
+
                         callSkype.setOnClickListener {
                             openInNewWindow(data)
                         }

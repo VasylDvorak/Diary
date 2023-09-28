@@ -40,7 +40,7 @@
                 android:id="@+id/icon"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/icon" />
+                android:src="@drawable/img_key" />
     </com.google.android.material.card.MaterialCardView>
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -79,7 +79,7 @@
                     android:id="@+id/avatar_first"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/icon" />
+                    android:src="@drawable/icon_book" />
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/avatar_card_second"
@@ -94,7 +94,7 @@
                     android:background="@drawable/rounded_card"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/icon" />
+                    android:src="@drawable/eng_test" />
             </com.google.android.material.card.MaterialCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

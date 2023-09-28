@@ -208,4 +208,6 @@
     <string name="lessons">Уроки</string>
     <string name="app_button">Приложение</string>
     <string name="shows_image_icon">Shows image icon</string>
+    <string name="date_lesson">01.01.2023</string>
+    <string name="type_lesson">Тип урока</string>
 </resources>

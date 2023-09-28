@@ -2,19 +2,19 @@
   {
     "dataCalendarEndTime": {
       "day": 20,
-      "hour": 14,
-      "minute": 30,
+      "hour": 16,
+      "minute": 20,
       "month": 2,
       "year": 2024
     },
     "dataCalendarStartTime": {
       "day": 20,
-      "hour": 13,
-      "minute": 30,
+      "hour": 15,
+      "minute": 20,
       "month": 2,
       "year": 2024
     },
-    "description": "Зкзамен по литературе",
+    "description": "Экзамен по литературе",
     "elapsedTime": {
       "day": 0,
       "hour": 0,
@@ -98,7 +98,7 @@
       "month": 11,
       "year": 2023
     },
-    "description": "Зкзамен по матемаитке",
+    "description": "Экзамен по матемаитке",
     "elapsedTime": {
       "day": 0,
       "hour": 0,
@@ -107,7 +107,7 @@
       "year": 0
     },
     "icons": [],
-    "id": 1,
+    "id": 4,
     "subject": "Математика",
     "typeofLesson": "Экзамен"
   },
@@ -135,9 +135,37 @@
       "year": 0
     },
     "icons": [],
-    "id": 1,
+    "id": 5,
     "subject": "Английский язык",
     "typeofLesson": "Дополнительное занятие"
+  },
+  {
+    "dataCalendarEndTime": {
+      "day": 25,
+      "hour": 14,
+      "minute": 30,
+      "month": 4,
+      "year": 2024
+    },
+    "dataCalendarStartTime": {
+      "day": 25,
+      "hour": 13,
+      "minute": 30,
+      "month": 4,
+      "year": 2024
+    },
+    "description": "Выучить стих",
+    "elapsedTime": {
+      "day": 0,
+      "hour": 0,
+      "minute": 0,
+      "month": 0,
+      "year": 0
+    },
+    "icons": [],
+    "id": 6,
+    "subject": "Литература",
+    "typeofLesson": "Домашнее задание"
   }
 ]
 

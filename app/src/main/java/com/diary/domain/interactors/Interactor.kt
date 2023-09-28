@@ -14,4 +14,6 @@ interface Interactor {
     suspend fun getLessons(allTasks: List<Lesson>): List<Lesson> = listOf()
     suspend fun getCommonData(): Flow<CommonDataModel> = flow{}
     suspend fun getLessonsForLessonsFragment(): Flow<List<Lesson>>
+    suspend fun checkTimeDifferenceForHomeWork(item: Lesson): Int
+    suspend fun checkTimeDifferenceForExamination(item: Lesson): List<Int>
 }

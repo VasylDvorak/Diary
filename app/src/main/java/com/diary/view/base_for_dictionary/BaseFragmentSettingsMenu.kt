@@ -43,5 +43,4 @@ abstract class BaseFragmentSettingsMenu<B : ViewBinding>(
         return AnimatorDictionary().setAnimator(transit, enter)
     }
 
-    abstract fun responseEmpty()
 }
