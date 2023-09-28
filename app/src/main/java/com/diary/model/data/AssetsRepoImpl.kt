@@ -25,7 +25,7 @@ class AssetsRepoImpl : AssetsRepo {
             return listOf()
         }
         if(databaseRawWithDuartion.size == 1){
-            return databaseRaw
+            return databaseRawWithDuartion
         }
         databaseRawWithDuartion.sortBy { it.duration }
         return databaseRawWithDuartion
