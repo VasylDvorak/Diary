@@ -1,18 +1,13 @@
 package com.diary.view.main_fragment
 
-import android.os.CountDownTimer
 import androidx.lifecycle.LiveData
 import com.diary.domain.interactors.MainInteractor
 import com.diary.model.lessons_home_works.CommonDataModel
 import com.diary.view.base_for_dictionary.BaseViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.debounce
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 
@@ -44,14 +39,14 @@ class MainViewModel(var interactor: MainInteractor) : BaseViewModel<CommonDataMo
 
 
     override fun getData(): LiveData<CommonDataModel> {
-                  coroutineScope.launch {
-                       dataFromNetwork().catch {
-                            emit(CommonDataModel())
-                        }
-                    .filterNotNull().collect { result ->
-                        _liveDataForViewToObserve.postValue(result)
-                    }
+        coroutineScope.launch {
+            dataFromNetwork().catch {
+                emit(CommonDataModel())
             }
+                .filterNotNull().collect { result ->
+                    _liveDataForViewToObserve.postValue(result)
+                }
+        }
         return super.getData()
     }
 

@@ -1,7 +1,6 @@
 package com.diary.view
 
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -60,22 +59,9 @@ class MainActivity : AppCompatActivity() {
         navigatorHolder.removeNavigator()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
-        return true
-    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.search -> {
-                Toast.makeText(
-                    applicationContext,
-                    getString(R.string.search_word),
-                    Toast.LENGTH_SHORT
-                ).show()
-                return true
-            }
-
             R.id.settings_app_bar -> {
                 Toast.makeText(applicationContext, getString(R.string.settings), Toast.LENGTH_SHORT)
                     .show()

@@ -1,16 +1,4 @@
 
-x
-Happ/src/main/java/com/diary/utils/delegates/SharedPreferencesDelegate.kt,5\f\5f0b2dec15826c22dfa3c4ea8ac1b1408098ad7c
-l
-<app/src/main/java/com/diary/utils/ui/EquilateralImageView.kt,8\e\8e04323926c594d481ca8736dd5922f28bbd161e
-q
-Aapp/src/main/java/com/diary/di/koin_modules/MainFragmentModule.kt,a\e\ae9ad30d8ec5b5ecd9306129f68ac1f18dbf05d0
-h
-8app/src/main/java/com/diary/di/koin_modules/AppModule.kt,e\6\e62b3e6d8c5d4da75e56ea4984e1fc753ebadfed
-u
-Eapp/src/main/java/com/diary/view/base_for_dictionary/BaseViewModel.kt,4\3\434409d0f867776d29878613ccdc0376632ca332
-t
-Dapp/src/main/java/com/diary/di/koin_modules/LessonsFragmentModule.kt,0\d\0dd901f0d68650d535cf5b7b17d253b0852b7ebc
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 ?
@@ -19,33 +7,7 @@ Dapp/src/main/java/com/diary/di/koin_modules/LessonsFragmentModule.kt,0\d\0dd90
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-^
-.app/src/main/java/com/diary/application/App.kt,9\e\9e912499e788f82e9520cadf3bf14ae1f6a22454
-f
-6app/src/main/java/com/diary/view/AnimatorDictionary.kt,7\3\73bb2ee17a03cd8ce057325f92a8b900dc1c736d
-o
-?app/src/main/java/com/diary/utils/delegates/ViewByIdDelegate.kt,d\9\d9927fff2e39a0046c350a4fcc2faed9703a4e17
-b
-2app/src/main/java/com/diary/navigation/IScreens.kt,9\d\9da7f90a25d39de76f1060bf61f81b3ca75a4d37
-h
-8app/src/main/java/com/diary/navigation/AndroidScreens.kt,f\6\f6d35489133ad58047f39c1676f7cf037d85dbd8
-d
-4app/src/main/java/com/diary/di/ConnectKoinModules.kt,b\4\b43143997e1d16991424609f21ceb9e9fe492d21
-j
-:app/src/main/java/com/diary/di/koin_modules/DiConstants.kt,d\0\d051848b49c51705b1773cebf3a1460dc77787cd
-m
-=app/src/main/java/com/diary/di/koin_modules/CiceroneModule.kt,9\a\9a958952fed164c5752b8117fb73b85a8fe50588
-o
-?app/src/main/java/com/diary/view/main_fragment/MainViewModel.kt,c\e\ce8ac232f5ff9fb85cf52e4864dba4f9633c6002
-g
-7app/src/main/java/com/diary/model/home_work/HomeWork.kt,5\4\54e982e7cba9f73d29d6837249767c207417a365
-k
-;app/src/main/java/com/diary/model/home_work/CalendarTime.kt,9\9\99bcffa24e5d75b37b9995df10da580f76ffe83a
 p
 @app/src/main/java/com/diary/view/description/LessonsViewModel.kt,0\c\0c3bac699bc6f2eb4dae828bf75bc730e5b6f373
-j
-:app/src/main/java/com/diary/model/repository/Repository.kt,9\4\94a09c8d1d333eaf851e6332a1cb6339073aad70
-x
-Happ/src/main/java/com/diary/model/lessons_home_works/CoommonDataModel.kt,4\2\428262c4e833489f75107c8d7cf17f638d484313
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e

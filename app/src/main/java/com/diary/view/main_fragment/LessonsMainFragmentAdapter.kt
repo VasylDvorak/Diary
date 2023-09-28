@@ -55,7 +55,7 @@ class LessonsMainFragmentAdapter(
                         callSkype.setOnClickListener {
                             openInNewWindow(data)
                         }
-                        if (data.typeofLesson == "Дополнительное занятие") {
+                        if (data.typeofLesson == context.getString(R.string.additional_lesson)) {
                             binding.lessonCard.background =
                                 getDrawable(context, R.drawable.rounded_card)
                             callSkype.visibility = View.GONE

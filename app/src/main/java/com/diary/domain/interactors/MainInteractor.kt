@@ -45,7 +45,7 @@ class MainInteractor(
                 hour = timeDifference[1],
                 minute = timeDifference[2]
             )
-            it.duration=timeDifference[3].toLong()
+            it.duration = timeDifference[3].toLong()
         }
 
         return examinations
@@ -71,7 +71,7 @@ class MainInteractor(
         )
     }
 
-  override  suspend fun checkTimeDifferenceForExamination(item: Lesson): List<Int> {
+    override suspend fun checkTimeDifferenceForExamination(item: Lesson): List<Int> {
         val calendar = Calendar.getInstance()
         val timeFromItem = Calendar.getInstance()
         timeFromItem.set(
@@ -93,7 +93,7 @@ class MainInteractor(
         return listOf(days.toInt(), hours.toInt(), minute.toInt(), minuteDuration)
     }
 
-   override suspend fun checkTimeDifferenceForHomeWork(item: Lesson): Int {
+    override suspend fun checkTimeDifferenceForHomeWork(item: Lesson): Int {
         val calendar = Calendar.getInstance()
         val timeFromItem = Calendar.getInstance()
         timeFromItem.set(

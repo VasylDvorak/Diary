@@ -3,6 +3,7 @@ package com.diary.view.main_fragment
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.diary.R
 import com.diary.databinding.HomeWorkItemBinding
 import com.diary.model.home_work.HomeWork
 
@@ -37,8 +38,9 @@ class HomeWorksMainFragmentAdapter :
                 itemView.apply {
                     binding.apply {
                         lesson.text = data.subject
-                        timeLeft.text ="Сдать ДЗ через " +
-                                data.dataCalendarTimePass.day.toString()+" дней"
+                        timeLeft.text =context.getString(R.string.pass_HW) +
+                                data.dataCalendarTimePass.day.toString()+
+                                context.getString(R.string.days)
                         task.text = data.task
                     }
                 }

@@ -1,7 +1,5 @@
 package com.diary.view.main_fragment
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
@@ -12,16 +10,19 @@ import com.diary.R
 import com.diary.databinding.FragmentMainBinding
 import com.diary.di.ConnectKoinModules.mainScreenScope
 import com.diary.model.lessons_home_works.CommonDataModel
-import com.diary.model.lessons_home_works.Lesson
 import com.diary.utils.delegates.viewById
-import com.diary.view.base_for_dictionary.BaseFragmentSettingsMenu
+import com.diary.view.base_for_dictionary.BaseFragment
+import com.diary.view.base_for_dictionary.countDownInterval
+import com.diary.view.base_for_dictionary.millisInFuture
 
 
-class MainFragment : BaseFragmentSettingsMenu<FragmentMainBinding>(FragmentMainBinding::inflate) {
+class MainFragment : BaseFragment<FragmentMainBinding>(
+    FragmentMainBinding::inflate,
+    R.id.lesson_table
+) {
 
     lateinit var viewModel: MainViewModel
     private val observer = Observer<CommonDataModel> { renderData(it) }
-    private val lessonTable by viewById<RecyclerView>(R.id.lesson_table)
     private val homeWorkTable by viewById<RecyclerView>(R.id.home_work_table)
     private val examinationTable by viewById<RecyclerView>(R.id.examination_table)
 
@@ -35,12 +36,6 @@ class MainFragment : BaseFragmentSettingsMenu<FragmentMainBinding>(FragmentMainB
         ExaminationMainFragmentAdapter()
     }
 
-
-    private fun onItemClick(lesson: Lesson) {
-        val skype = Intent("android.intent.action.VIEW")
-        skype.data = Uri.parse("skype:" + "");
-        context?.startActivity(skype)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
@@ -61,7 +56,7 @@ class MainFragment : BaseFragmentSettingsMenu<FragmentMainBinding>(FragmentMainB
         this.viewModel.subscribe().observe(viewLifecycleOwner, observer)
 
         timer = object : CountDownTimer(
-            1000 * 1000*60, 1000*60
+            millisInFuture, countDownInterval
         ) {
             override fun onTick(millisUntilFinished: Long) {
 
@@ -100,6 +95,7 @@ class MainFragment : BaseFragmentSettingsMenu<FragmentMainBinding>(FragmentMainB
     fun setDataToAdapter(commonDataModel: CommonDataModel) {
         examinationTableAdapter?.setData(commonDataModel.examinations)
         lessonTableAdapter?.setData(commonDataModel.lessons)
+        lessons = commonDataModel.lessons
         homeWorkTableAdapter?.setData(commonDataModel.homeWorkList)
     }
 

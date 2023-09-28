@@ -52,4 +52,8 @@
     <color name="example_middle">#00c3f9</color>
     <color name="example_dark">#00aaec</color>
 
+    <color name="color_pressed">#D3A5A5</color>
+    <color name="color_release">#FFFFFF</color>
+
+
 </resources>

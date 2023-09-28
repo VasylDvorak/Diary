@@ -210,4 +210,9 @@
     <string name="shows_image_icon">Shows image icon</string>
     <string name="date_lesson">01.01.2023</string>
     <string name="type_lesson">Тип урока</string>
+    <string name="can_not_find_lesson">Не можем найти урок. Введите название урока с большой буквы</string>
+    <string name="additional_lesson">Дополнительное занятие</string>
+    <string name="now_exem">Идёт экзамен</string>
+    <string name="pass_HW">"Сдать ДЗ через "</string>
+    <string name="days">" дней"</string>
 </resources>

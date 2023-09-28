@@ -1,6 +1,6 @@
 package com.diary.navigation
 
-import com.diary.view.description.LessonsFragment
+import com.diary.view.lessons.LessonsFragment
 import com.diary.view.main_fragment.MainFragment
 import com.github.terrakok.cicerone.Screen
 import com.github.terrakok.cicerone.androidx.FragmentScreen

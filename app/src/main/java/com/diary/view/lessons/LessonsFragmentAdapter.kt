@@ -1,4 +1,4 @@
-package com.diary.view.description
+package com.diary.view.lessons
 
 import android.view.LayoutInflater
 import android.view.View
@@ -56,7 +56,7 @@ class LessonsFragmentAdapter(
                         callSkype.setOnClickListener {
                             openInNewWindow(data)
                         }
-                        if (data.typeofLesson == "Дополнительное занятие") {
+                        if (data.typeofLesson == context.getString(R.string.additional_lesson)) {
                             binding.lessonCard.background =
                                 AppCompatResources.getDrawable(context, R.drawable.rounded_card)
                             callSkype.visibility = View.GONE

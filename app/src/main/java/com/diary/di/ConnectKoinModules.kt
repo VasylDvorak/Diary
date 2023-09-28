@@ -11,8 +11,8 @@ import com.diary.domain.interactors.MainInteractor
 import com.diary.model.data.AssetsRepoImpl
 import com.diary.model.repository.Repository
 import com.diary.model.repository.RepositoryImplementation
-import com.diary.view.description.LessonsFragment
-import com.diary.view.description.LessonsViewModel
+import com.diary.view.lessons.LessonsFragment
+import com.diary.view.lessons.LessonsViewModel
 import com.diary.view.main_fragment.MainFragment
 import com.diary.view.main_fragment.MainViewModel
 import org.koin.android.ext.koin.androidApplication

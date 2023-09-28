@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.diary.R
 import com.diary.databinding.ExaminationItemBinding
 import com.diary.model.lessons_home_works.Lesson
 
@@ -38,7 +39,7 @@ class ExaminationMainFragmentAdapter :
                     binding.apply {
                         subjectExamination.text = data.description
                         if (data.duration <= 0L) {
-                            toExamination.text = "Идёт экзамен"
+                            toExamination.text = context.getString(R.string.now_exem)
                             timerUnit.visibility = View.GONE
                         } else {
                             timerUnit.visibility = View.VISIBLE

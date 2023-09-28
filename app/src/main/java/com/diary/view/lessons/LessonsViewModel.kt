@@ -1,19 +1,14 @@
-package com.diary.view.description
+package com.diary.view.lessons
 
 import android.app.SearchManager.QUERY
-import android.os.CountDownTimer
 import androidx.lifecycle.LiveData
 import com.diary.domain.interactors.MainInteractor
 import com.diary.model.lessons_home_works.Lesson
 import com.diary.view.base_for_dictionary.BaseViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.debounce
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 
