@@ -39,7 +39,6 @@ class MainViewModel(var interactor: MainInteractor) : BaseViewModel<CommonDataMo
         _liveDataForViewToObserve.value = CommonDataModel()
         super.onCleared()
     }
-
     override fun getData(): LiveData<CommonDataModel> {
         timer = object : CountDownTimer(
                 millisInFuture, countDownInterval
