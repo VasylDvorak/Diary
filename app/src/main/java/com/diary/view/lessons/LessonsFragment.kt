@@ -1,7 +1,6 @@
 package com.diary.view.lessons
 
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,8 +9,6 @@ import com.diary.databinding.FragmentLessonsBinding
 import com.diary.di.ConnectKoinModules
 import com.diary.model.lessons_home_works.Lesson
 import com.diary.view.base_for_dictionary.BaseFragment
-import com.diary.view.base_for_dictionary.countDownInterval
-import com.diary.view.base_for_dictionary.millisInFuture
 
 
 class LessonsFragment :
@@ -45,19 +42,7 @@ class LessonsFragment :
         val viewModel: LessonsViewModel by lazy { ConnectKoinModules.lessonsScreenScope.get() }
         this.viewModel = viewModel
         this.viewModel.subscribe().observe(viewLifecycleOwner, observer)
-
-        timer = object : CountDownTimer(
-            millisInFuture, countDownInterval
-        ) {
-            override fun onTick(millisUntilFinished: Long) {
-                this@LessonsFragment.viewModel.getData()
-            }
-
-            override fun onFinish() {
-                timer.start()
-            }
-        }
-        timer.start()
+        this.viewModel.getData()
     }
 
     private fun initViews() {

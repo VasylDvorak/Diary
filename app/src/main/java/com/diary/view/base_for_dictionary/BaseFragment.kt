@@ -7,7 +7,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
@@ -34,8 +33,6 @@ import smartdevelop.ir.eram.showcaseviewlib.GuideView
 import smartdevelop.ir.eram.showcaseviewlib.config.DismissType
 import smartdevelop.ir.eram.showcaseviewlib.config.Gravity
 
-const val countDownInterval: Long = 60 * 1000
-const val millisInFuture: Long = countDownInterval * 1000
 
 abstract class BaseFragment<B : ViewBinding>(
     private val inflateBinding: (
@@ -47,7 +44,6 @@ abstract class BaseFragment<B : ViewBinding>(
     lateinit var searchView: SearchView
     val lessonTable by viewById<RecyclerView>(lessonTableId)
     var lessons: List<Lesson> = listOf()
-    lateinit protected var timer: CountDownTimer
     private var _binding: B? = null
     protected val binding: B
         get() = _binding!!

@@ -1,9 +1,12 @@
 package com.diary.view.main_fragment
 
+import android.os.CountDownTimer
 import androidx.lifecycle.LiveData
 import com.diary.domain.interactors.MainInteractor
 import com.diary.model.lessons_home_works.CommonDataModel
 import com.diary.view.base_for_dictionary.BaseViewModel
+import com.diary.view.base_for_dictionary.countDownInterval
+import com.diary.view.base_for_dictionary.millisInFuture
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.filterNotNull
@@ -37,16 +40,25 @@ class MainViewModel(var interactor: MainInteractor) : BaseViewModel<CommonDataMo
         super.onCleared()
     }
 
-
     override fun getData(): LiveData<CommonDataModel> {
-        coroutineScope.launch {
-            dataFromNetwork().catch {
-                emit(CommonDataModel())
-            }
-                .filterNotNull().collect { result ->
-                    _liveDataForViewToObserve.postValue(result)
+        timer = object : CountDownTimer(
+                millisInFuture, countDownInterval
+            ) {
+                override fun onTick(millisUntilFinished: Long) {
+                    coroutineScope.launch {
+                        dataFromNetwork().catch {
+                            emit(CommonDataModel())
+                        }
+                            .filterNotNull().collect { result ->
+                                _liveDataForViewToObserve.postValue(result)
+                            }
+                    }
                 }
-        }
+                override fun onFinish() {
+                    timer.start()
+                }
+            }
+            timer.start()
         return super.getData()
     }
 
